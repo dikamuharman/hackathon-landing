@@ -14,10 +14,10 @@ const AboutSection = () => {
         <Image src={AboutImage} alt="About image" />
       </div>
       <div className="mt-8 text-center lg:w-1/2 lg:text-left">
-        <h2 className="mb-7 text-3xl font-bold text-textPrimary lg:mb-10 lg:text-4xl">
+        <h2 className="mb-7 text-3xl font-bold text-textPrimary lg:mb-10 lg:text-5xl">
           About Us
         </h2>
-        <p className="mb-7 text-sm leading-6 lg:mb-10 lg:text-lg lg:leading-7">
+        <p className="mb-7 text-sm leading-6 lg:mb-10 lg:text-base lg:leading-7">
           HackFest Indonesia is Indonesia’s hackathon <br />
           held by GDSC Indonesia where university students <br />
           of different skills from all over Indonesia can come <br />
