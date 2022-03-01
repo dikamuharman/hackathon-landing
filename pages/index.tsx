@@ -7,6 +7,7 @@ import { HiMenu, HiX } from 'react-icons/hi'
 import { useState } from 'react'
 import AboutSection from '../components/Section/AboutSection'
 import PrizeSection from '../components/Section/PrizeSection'
+import FaqSection from '../components/Section/FaqSection'
 
 const Home: NextPage = () => {
   const [open, setOpen] = useState(false)
@@ -30,6 +31,7 @@ const Home: NextPage = () => {
       <AboutSection />
       {/* TODO : Disini timeline */}
       <PrizeSection />
+      <FaqSection />
     </>
   )
 }
