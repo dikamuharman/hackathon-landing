@@ -8,6 +8,7 @@ import { useState } from 'react'
 import AboutSection from '../components/Section/AboutSection'
 import PrizeSection from '../components/Section/PrizeSection'
 import FaqSection from '../components/Section/FaqSection'
+import SubscribeSection from '../components/Section/SubscribeSection'
 
 const Home: NextPage = () => {
   const [open, setOpen] = useState(false)
@@ -31,7 +32,11 @@ const Home: NextPage = () => {
       <AboutSection />
       {/* TODO : Disini timeline */}
       <PrizeSection />
-      <FaqSection />
+      <div className="bg-primary ">
+        <FaqSection />
+      </div>
+      <SubscribeSection />
+      <div className="p-44"></div>
     </>
   )
 }

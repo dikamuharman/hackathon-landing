@@ -7,7 +7,7 @@ const FaqSection = () => {
   return (
     <Container
       as="section"
-      className="mt-28 flex flex-col items-center bg-primary pt-28 pb-32"
+      className="mt-28 flex flex-col items-center pt-28 pb-32"
     >
       <h3 className="text-center text-3xl font-bold text-white">
         Frequently <br className="lg:hidden" /> Asked <br /> Questions
