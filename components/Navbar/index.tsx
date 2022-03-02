@@ -15,11 +15,12 @@ const Navbar = () => {
       <div className="hidden flex-row justify-between lg:flex">
         <ul className="mb-4 flex flex-row ">
           {menus.map((menu, i) => (
-            <li
-              key={`${i}-links`}
-              className="text-right text-primary lg:ml-7 lg:text-lg"
-            >
-              <Link href={menu.url}>{menu.name}</Link>
+            <li key={`${i}-links`} className=" lg:ml-7">
+              <Link href={menu.url} passHref>
+                <a className=" text-right text-primary transition-all hover:border-b-2 hover:border-b-primary lg:text-lg">
+                  {menu.name}
+                </a>
+              </Link>
             </li>
           ))}
         </ul>
