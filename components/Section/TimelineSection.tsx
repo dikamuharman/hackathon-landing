@@ -2,13 +2,34 @@ import React from 'react'
 import Container from '../Container'
 
 const timeLines = [
-  'Registration',
-  'Techmeet',
-  'Hacking time',
-  'submission',
-  'Showcase and awarding',
-  'Special mentorship',
-  'GSC Submission deadline',
+  {
+    name: 'Registration',
+    date: '5 - 18 march',
+  },
+  {
+    name: 'Intro & tm',
+    date: '9 march',
+  },
+  {
+    name: 'Tech talk',
+    date: '20 march',
+  },
+  {
+    name: 'Mentorship',
+    date: '21 - 25 march',
+  },
+  {
+    name: 'Awarding top 10 & top 5',
+    date: '26 march',
+  },
+  {
+    name: 'Showcase top 5 + awarding top 3',
+    date: '27 march',
+  },
+  {
+    name: 'Controlling Partisipant GSC',
+    date: '28 march',
+  },
 ]
 
 const TimelineSection = () => {
@@ -18,7 +39,6 @@ const TimelineSection = () => {
         Timeline
       </h2>
       <div className="flex w-full justify-center px-4">
-        {/* <div className="mr-5 border-2 border-dotted border-primary"></div> */}
         <ul className="lg:flex">
           {timeLines.map((timeLine, i) => (
             <li className="group relative flex lg:flex-col" key={i}>
@@ -28,8 +48,8 @@ const TimelineSection = () => {
                   <div className="h-[8px] w-[8px] rounded-full bg-white"></div>
                 </div>
                 <div className="-mt-4 pr-5 lg:mt-0 lg:text-center">
-                  <p className="font-bold">{timeLine}</p>
-                  <span>(12 Mar - 18 mar)</span>
+                  <p className="font-bold">{timeLine.name}</p>
+                  <span>{timeLine.date}</span>
                 </div>
               </div>
             </li>
