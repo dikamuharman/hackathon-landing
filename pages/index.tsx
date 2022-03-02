@@ -22,10 +22,14 @@ const Home: NextPage = () => {
       <Sidenav open={open} />
       <div className="fixed bottom-6 right-5 z-20 lg:hidden">
         <button
-          className="rounded-full bg-primary p-4 shadow-md "
+          className="rounded-full bg-primary p-4 shadow-md"
           onClick={() => setOpen(!open)}
         >
-          {open ? <HiX color="#fff" /> : <HiMenu color="#fff" />}
+          {open ? (
+            <HiX color="#fff" size={24} />
+          ) : (
+            <HiMenu color="#fff" size={24} />
+          )}
         </button>
       </div>
       <HeroSection />
