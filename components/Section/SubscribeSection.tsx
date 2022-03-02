@@ -22,7 +22,7 @@ const SubscribeSection = () => {
           />
           <Button
             as="button"
-            type="secondary"
+            color="secondary"
             variant="default"
             className="w-2/6 !rounded-full text-xs lg:text-base"
           >

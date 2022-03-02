@@ -53,7 +53,7 @@ const PrizeSection = () => {
             </li>
           ))}
         </ul>
-        <Button as="link" type="secondary" href="/" className="mt-5">
+        <Button as="link" color="secondary" href="/" className="mt-5">
           Learn more
         </Button>
       </div>

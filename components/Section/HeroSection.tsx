@@ -30,7 +30,7 @@ const HeroSection = () => {
           <Button
             as="link"
             href="/"
-            type="secondary"
+            color="secondary"
             variant="default"
             className="text-sm"
           >
@@ -39,7 +39,7 @@ const HeroSection = () => {
           <Button
             as="link"
             href="/"
-            type="primary"
+            color="primary"
             variant="outline"
             className="ml-7 text-sm"
           >

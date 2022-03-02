@@ -22,7 +22,7 @@ const AboutSection = () => {
           software or hardware based on <br />
           United Nation 17 SDGs.
         </p>
-        <Button as="link" href="/" type="secondary">
+        <Button as="link" href="/" color="secondary">
           Learn more
         </Button>
       </div>

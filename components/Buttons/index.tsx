@@ -4,7 +4,7 @@ import React from 'react'
 
 type AppProps = {
   variant?: 'outline' | 'default' | 'text'
-  type?: 'primary' | 'secondary'
+  color?: 'primary' | 'secondary'
   as?: 'link' | 'button'
   children: string
   className?: string
@@ -14,7 +14,7 @@ type AppProps = {
 
 const Button: React.VFC<AppProps> = ({
   as = 'button',
-  type,
+  color,
   children,
   variant = 'default',
   className = '',
@@ -25,14 +25,14 @@ const Button: React.VFC<AppProps> = ({
   const buttonClass = classNames(
     {
       'bg-primary text-white hover:bg-[#0355A7]':
-        variant === 'default' && type === 'primary',
+        variant === 'default' && color === 'primary',
       'border-2': variant === 'outline',
       'border-primary text-primary hover:bg-primary hover:text-white':
-        variant === 'outline' && type === 'primary',
+        variant === 'outline' && color === 'primary',
       'border-secodary text-secodary':
-        variant === 'outline' && type === 'secondary',
+        variant === 'outline' && color === 'secondary',
       'bg-secodary text-white hover:bg-[#ED8E00]':
-        variant === 'default' && type === 'secondary',
+        variant === 'default' && color === 'secondary',
     },
     `cursor-pointer rounded-xl lg:px-6 lg:py-[15px] px-4 py-[10px] hover:shadow-md transition-colors transition-shadow ${className}`
   )
