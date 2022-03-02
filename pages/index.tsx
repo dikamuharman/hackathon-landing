@@ -10,6 +10,7 @@ import PrizeSection from '../components/Section/PrizeSection'
 import FaqSection from '../components/Section/FaqSection'
 import SubscribeSection from '../components/Section/SubscribeSection'
 import FooterSection from '../components/Section/FooterSection'
+import TimelineSection from '../components/Section/TimelineSection'
 
 const Home: NextPage = () => {
   const [open, setOpen] = useState(false)
@@ -35,7 +36,7 @@ const Home: NextPage = () => {
       </div>
       <HeroSection />
       <AboutSection />
-      {/* TODO : Disini timeline */}
+      <TimelineSection />
       <PrizeSection />
       <div className="bg-primary ">
         <FaqSection />
