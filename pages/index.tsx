@@ -9,6 +9,7 @@ import AboutSection from '../components/Section/AboutSection'
 import PrizeSection from '../components/Section/PrizeSection'
 import FaqSection from '../components/Section/FaqSection'
 import SubscribeSection from '../components/Section/SubscribeSection'
+import FooterSection from '../components/Section/FooterSection'
 
 const Home: NextPage = () => {
   const [open, setOpen] = useState(false)
@@ -40,7 +41,7 @@ const Home: NextPage = () => {
         <FaqSection />
       </div>
       <SubscribeSection />
-      <div className="p-44"></div>
+      <FooterSection />
     </>
   )
 }
