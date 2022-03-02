@@ -1,7 +1,7 @@
 import React from 'react'
 
 type ContainerProps = {
-  as: 'div' | 'section' | 'main'
+  as: 'div' | 'section' | 'main' | 'footer'
   children: React.ReactNode
   className?: string
 }
