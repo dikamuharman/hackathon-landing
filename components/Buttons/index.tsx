@@ -9,6 +9,7 @@ type AppProps = {
   children: string
   className?: string
   href?: string
+  isRounded?: boolean
 }
 
 const Button: React.VFC<AppProps> = ({
@@ -18,19 +19,22 @@ const Button: React.VFC<AppProps> = ({
   variant = 'default',
   className = '',
   href,
+  isRounded = true,
   ...rest
 }: AppProps) => {
   const buttonClass = classNames(
     {
-      'bg-primary text-white': variant === 'default' && type === 'primary',
+      'bg-primary text-white hover:bg-[#0355A7]':
+        variant === 'default' && type === 'primary',
       'border-2': variant === 'outline',
-      'border-primary text-primary':
+      'border-primary text-primary hover:bg-primary hover:text-white':
         variant === 'outline' && type === 'primary',
       'border-secodary text-secodary':
         variant === 'outline' && type === 'secondary',
-      'bg-secodary text-white ': variant === 'default' && type === 'secondary',
+      'bg-secodary text-white hover:bg-[#ED8E00]':
+        variant === 'default' && type === 'secondary',
     },
-    `cursor-pointer rounded-xl lg:px-6 lg:py-[15px] px-4 py-[10px] ${className}`
+    `cursor-pointer rounded-xl lg:px-6 lg:py-[15px] px-4 py-[10px] hover:shadow-md transition-colors transition-shadow ${className}`
   )
 
   return as === 'link' ? (
@@ -40,7 +44,9 @@ const Button: React.VFC<AppProps> = ({
       </a>
     </Link>
   ) : (
-    <button className={buttonClass} {...rest}></button>
+    <button className={buttonClass} {...rest}>
+      {children}
+    </button>
   )
 }
 
