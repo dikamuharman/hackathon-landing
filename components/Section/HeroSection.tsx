@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <Container
       as="section"
-      className="grid grid-cols-1 grid-rows-[1fr_250px_150px] lg:mt-12 lg:grid-cols-2 lg:grid-rows-[1fr_150px]"
+      className="grid grid-cols-1 grid-rows-[1fr_250px_150px] lg:mt-4 lg:grid-cols-2 lg:grid-rows-[1fr_150px]"
     >
       <div className="flex justify-center lg:order-2">
         <Image src={HeroImage} alt="Hero image" objectFit="cover" />
