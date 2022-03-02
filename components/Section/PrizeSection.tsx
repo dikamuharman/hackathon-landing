@@ -38,7 +38,7 @@ const PrizeSection = () => {
         <ul className=" text-black">
           {benefits.map((benefit, i) => (
             <li
-              className="my-3 flex w-[250px] items-center lg:w-[400px] "
+              className="my-3 flex w-[310px] items-center lg:w-[400px] "
               key={`${i}-benefits`}
             >
               <Image
@@ -47,7 +47,7 @@ const PrizeSection = () => {
                 className="w-full shrink-0"
               />
               <p
-                className="ml-3 text-sm font-semibold lg:text-base"
+                className="ml-3 break-words text-sm font-semibold lg:text-base"
                 dangerouslySetInnerHTML={{ __html: benefit }}
               />
             </li>
