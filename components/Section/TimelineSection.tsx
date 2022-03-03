@@ -7,7 +7,7 @@ const timeLines = [
     date: '5 - 18 march',
   },
   {
-    name: 'Intro & tm',
+    name: 'Opening & Technical meeting',
     date: '9 march',
   },
   {

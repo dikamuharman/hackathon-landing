@@ -24,17 +24,17 @@ const Button: React.VFC<AppProps> = ({
 }: AppProps) => {
   const buttonClass = classNames(
     {
-      'bg-primary text-white hover:bg-[#0355A7]':
+      'bg-primary border-2 border-primary text-white hover:bg-[#0355A7]':
         variant === 'default' && color === 'primary',
       'border-2': variant === 'outline',
       'border-primary text-primary hover:bg-primary hover:text-white':
         variant === 'outline' && color === 'primary',
       'border-secodary text-secodary':
         variant === 'outline' && color === 'secondary',
-      'bg-secodary text-white hover:bg-[#ED8E00]':
+      'bg-secodary text-white hover:bg-[#ED8E00] border-2 border-secodary':
         variant === 'default' && color === 'secondary',
     },
-    `cursor-pointer rounded-xl lg:px-6 lg:py-[15px] px-4 py-[10px] hover:shadow-md transition-colors transition-shadow ${className}`
+    `cursor-pointer border-2 rounded-xl lg:px-6 lg:py-[15px] px-4 py-[10px] hover:shadow-md transition-colors transition-shadow ${className}`
   )
 
   return as === 'link' ? (

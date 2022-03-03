@@ -17,7 +17,7 @@ const HeroSection = () => {
       <div className="mt-6 flex flex-col items-center lg:order-1 lg:row-span-2  lg:items-start">
         <div>
           <h1 className="text-center text-3xl font-bold text-textPrimary lg:text-left lg:text-6xl">
-            Hackfest <br /> Indonesia
+            GDSC Hackfest <br /> Indonesia
           </h1>
           <div className="mt-4">
             <p className="w-[223px] text-center text-sm lg:w-[338px] lg:text-left lg:text-lg">

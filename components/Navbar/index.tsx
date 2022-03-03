@@ -25,15 +25,15 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="md:ml-14">
-          <Button as="link" variant="outline" type="primary" href="/">
+          <Button as="link" variant="outline" color="primary" href="/login">
             Login
           </Button>
           <Button
             as="link"
             variant="default"
-            href="/"
+            href="/register"
             className="ml-3"
-            type="primary"
+            color="primary"
           >
             Sign up
           </Button>
