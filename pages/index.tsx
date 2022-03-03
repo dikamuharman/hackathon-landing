@@ -18,7 +18,10 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <link href="http://fonts.cdnfonts.com/css/mont" rel="stylesheet" />
+        <link
+          href="http://fonts.cdnfonts.com/css/google-sans"
+          rel="stylesheet"
+        />
       </Head>
       <Navbar />
       <Sidenav open={open} />

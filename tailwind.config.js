@@ -5,7 +5,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Mont', 'sans-serif'],
+      sans: ['Product Sans', 'sans-serif'],
     },
     extend: {
       colors: {
