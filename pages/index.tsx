@@ -7,6 +7,8 @@ import { HiMenu, HiX } from 'react-icons/hi'
 import { useState } from 'react'
 import AboutSection from '../components/Section/AboutSection'
 import PrizeSection from '../components/Section/PrizeSection'
+import OfficialSection from '../components/Section/OfficialSection'
+import MediaSection from '../components/Section/MediaSection'
 import FaqSection from '../components/Section/FaqSection'
 import SubscribeSection from '../components/Section/SubscribeSection'
 import FooterSection from '../components/Section/FooterSection'
@@ -41,6 +43,8 @@ const Home: NextPage = () => {
       <AboutSection />
       <TimelineSection />
       <PrizeSection />
+      <OfficialSection />
+      <MediaSection />
       <div className="bg-primary ">
         <FaqSection />
       </div>
