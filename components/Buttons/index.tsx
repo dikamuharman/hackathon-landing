@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import Link from 'next/link'
 import React from 'react'
 
-type AppProps = {
+interface AppProps {
   variant?: 'outline' | 'default' | 'text'
   color?: 'primary' | 'secondary'
   as?: 'link' | 'button'
