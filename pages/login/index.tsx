@@ -16,7 +16,7 @@ const Login: NextPage = () => {
     <main className="flex h-screen lg:items-start">
       <Container
         as="section"
-        className=" mt-16 w-full px-3 md:w-3/5 lg:w-2/5 lg:bg-white lg:!px-8"
+        className=" mt-16 w-full px-3 md:w-3/5 lg:w-2/5 lg:bg-white lg:!px-8 "
       >
         <div className="my-8 px-3">
           <h1 className="mb-6 text-5xl font-bold text-textPrimary">Login</h1>
@@ -44,15 +44,9 @@ const Login: NextPage = () => {
                   <a className="underline">Forget Password ?</a>
                 </Link>
               </div>
-              <Button
-                as="button"
-                color="secondary"
-                variant="default"
-                className="w-full !rounded-full"
-                type="submit"
-              >
+              <button className="inline-block w-full cursor-pointer  rounded-xl bg-primary px-4 py-[10px]  text-white hover:bg-[#0355A7] hover:shadow-md lg:px-6 lg:py-[15px]">
                 Login
-              </Button>
+              </button>
             </form>
             <div className="mt-5 flex w-full justify-evenly">
               <span>Not member yet ? </span>

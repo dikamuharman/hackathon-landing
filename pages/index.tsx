@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
-import Sidenav from '../components/Sidenav'
+import Sidenav from '../components/Sidenav/Mobile'
 import HeroSection from '../components/Section/HeroSection'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { useState } from 'react'

@@ -1,10 +1,9 @@
 import React from 'react'
 import type { NextPage } from 'next'
 import Container from '../../components/Container'
-import InputText from '../../components/Forms/InputText'
+import InputText, { DefaultItemInput } from '../../components/Forms/InputText'
 import { HiEye } from 'react-icons/hi'
 import Link from 'next/link'
-import Button from '../../components/Buttons'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
 type RegisterInput = {
@@ -21,14 +20,14 @@ const index: NextPage = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<RegisterInput>()
-  const onSubmit: SubmitHandler<RegisterInput> = (data) => console.log(data)
+  } = useForm<DefaultItemInput>()
+  const onSubmit: SubmitHandler<DefaultItemInput> = (data) => console.log(data)
 
   return (
     <main className="flex lg:h-screen lg:items-start">
       <Container
         as="section"
-        className="mt-12 mb-12 w-full rounded md:w-4/5 lg:mt-24 lg:w-3/5 lg:bg-white lg:shadow"
+        className="mt-8 w-full rounded md:w-4/5 lg:mt-16 lg:w-3/5 lg:bg-white "
       >
         <div className="my-8 px-3">
           <h1 className="mb-6 text-5xl font-bold text-textPrimary">Register</h1>
@@ -101,15 +100,9 @@ const index: NextPage = () => {
                   </a>
                 </label>
               </div>
-              <Button
-                as="button"
-                type="submit"
-                color="secondary"
-                variant="default"
-                className="!rounded-full"
-              >
+              <button className="inline-block w-full cursor-pointer  rounded-xl bg-primary px-4 py-[10px]  text-white hover:bg-[#0355A7] hover:shadow-md lg:px-6 lg:py-[15px]">
                 Sign up
-              </Button>
+              </button>
             </form>
             <div className="mt-5 flex w-full justify-evenly">
               <span>Already a member ?</span>
