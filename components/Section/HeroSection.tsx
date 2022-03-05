@@ -29,7 +29,7 @@ const HeroSection = () => {
         <div className="mt-7 lg:mt-[128px]">
           <Button
             as="link"
-            href="/"
+            href="/login"
             color="secondary"
             variant="default"
             className="text-sm"

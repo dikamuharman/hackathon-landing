@@ -26,7 +26,7 @@ const Sidenav = ({ open }: SidenavProps) => {
         <li className="mt-20">
           <Button
             as="link"
-            href="/"
+            href="/login"
             variant="default"
             className="block bg-white text-center text-primary"
           >
@@ -36,7 +36,7 @@ const Sidenav = ({ open }: SidenavProps) => {
         <li className="mt-6">
           <Button
             as="link"
-            href="/"
+            href="/register"
             variant="outline"
             className="block border-white text-center text-white"
           >
