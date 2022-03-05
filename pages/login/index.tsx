@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Container from '../../components/Container'
-import Button from '../../components/Buttons'
 import InputText, { DefaultItemInput } from '../../components/Forms/InputText'
 import Link from 'next/link'
 import { HiEye } from 'react-icons/hi'
