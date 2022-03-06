@@ -1,10 +1,11 @@
-import { NextPage } from 'next'
+import { GetServerSideProps, NextPage, GetServerSidePropsContext } from 'next'
 import Image from 'next/image'
 import React from 'react'
 import Container from '../../components/Container'
 import LogoDsc from '../../assets/logo.svg'
 import DropdownMenu from '../../components/DropdownMenu'
 import Link from 'next/link'
+import nookies from 'nookies'
 
 const timeLines = [
   {
@@ -36,6 +37,21 @@ const timeLines = [
     date: '28 march',
   },
 ]
+
+export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+  const cookies = nookies.get(ctx)
+
+  if (!cookies.token) {
+    return {
+      redirect: {
+        destination: '/login',
+      },
+    }
+  }
+  return {
+    props: {},
+  }
+}
 
 const AdminHome: NextPage = () => {
   return (

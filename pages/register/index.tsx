@@ -1,18 +1,27 @@
 import React from 'react'
-import type { NextPage } from 'next'
+import type { GetServerSidePropsContext, NextPage } from 'next'
 import Container from '../../components/Container'
 import InputText, { DefaultItemInput } from '../../components/Forms/InputText'
 import { HiEye } from 'react-icons/hi'
 import Link from 'next/link'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import axios from 'axios'
+import nookies from 'nookies'
+import Router from 'next/router'
 
-type RegisterInput = {
-  username: string
-  name: string
-  phone: string
-  email: string
-  password: string
-  retype_password: string
+export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+  const cookies = nookies.get(ctx)
+
+  if (cookies.token) {
+    return {
+      redirect: {
+        destination: '/admin',
+      },
+    }
+  }
+  return {
+    props: {},
+  }
 }
 
 const index: NextPage = () => {
@@ -21,7 +30,26 @@ const index: NextPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<DefaultItemInput>()
-  const onSubmit: SubmitHandler<DefaultItemInput> = (data) => console.log(data)
+  const onSubmit: SubmitHandler<DefaultItemInput> = async (data) => {
+    if (data.password === data.retype_password) {
+      try {
+        const res = await axios.post(
+          `${process.env.URL_API}/auth/local/register`,
+          {
+            email: data.email,
+            password: data.password,
+            phone: data.phone,
+            username: data.username,
+            name: data.name,
+          }
+        )
+        nookies.set(null, 'token', res.data.jwt, {
+          maxAge: 7 * 24 * 60 * 60,
+        })
+        Router.replace('/admin')
+      } catch (error) {}
+    }
+  }
 
   return (
     <main className="flex lg:h-screen lg:items-start">
