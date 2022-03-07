@@ -28,17 +28,23 @@ const Login: NextPage = () => {
   const { register, handleSubmit } = useForm<DefaultItemInput>()
 
   const onSubmit: SubmitHandler<DefaultItemInput> = async (inputValue) => {
+    console.log(process.env.URL_API)
     try {
-      const res = await axios.post(`${process.env.URL_API}/auth/local`, {
-        identifier: inputValue.email,
-        password: inputValue.password,
-      })
-      console.log(res.data.jwt)
-      nookies.set(null, 'token', res.data.jwt, {
+      const { data } = await axios.post(
+        `${process.env.URL_API}/api/auth/local`,
+        {
+          identifier: inputValue.email,
+          password: inputValue.password,
+        }
+      )
+      console.log(data)
+      nookies.set(null, 'token', data.jwt, {
         maxAge: 7 * 24 * 60 * 60,
       })
       Router.replace('/admin')
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -60,6 +66,7 @@ const Login: NextPage = () => {
                 name="email"
                 type="email"
                 register={register}
+                required
               />
               <InputText
                 label="Password"
@@ -67,6 +74,7 @@ const Login: NextPage = () => {
                 type="password"
                 icon={<HiEye />}
                 register={register}
+                required
               />
               <div className="mb-4 flex w-full justify-end">
                 <Link href="#" passHref>

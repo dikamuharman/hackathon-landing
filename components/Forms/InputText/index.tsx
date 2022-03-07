@@ -10,8 +10,11 @@ type DefaultItemInput = {
   retype_password: string
   namaTim: string
   anggotaTim: string
-  uploadFoto: FileList
   uploadBuktiGSC: FileList
+  memberTeam: Array<{
+    name: string
+    photo: string
+  }>
 }
 
 export type { DefaultItemInput }
@@ -26,6 +29,7 @@ interface InputProps {
   register: UseFormRegister<DefaultItemInput>
   helperText?: string
   accept?: string
+  required?: boolean
 }
 
 const InputText = ({
@@ -38,6 +42,7 @@ const InputText = ({
   register,
   helperText,
   accept,
+  required,
 }: InputProps) => {
   const [isVisible, setIsVisible] = useState(true)
 
@@ -54,7 +59,7 @@ const InputText = ({
 
   if (type === 'file') {
     className =
-      'font-xs  h-full w-full bg-transparent  outline-none file:border-none file:h-full file:bg-secodary file:rounded file:px-3 file:py-3'
+      'font-xs  h-full w-full bg-transparent  outline-none file:border-none file:h-full file:bg-secodary file:rounded file:px-3 file:py-3 file:text-white'
   }
 
   return (
@@ -73,6 +78,7 @@ const InputText = ({
           placeholder={placeholder}
           type={type}
           accept={accept}
+          required={required}
           {...register(name)}
         />
         {icon && (
@@ -84,7 +90,10 @@ const InputText = ({
           </button>
         )}
       </div>
-      <span className="text-sm text-gray-400">{helperText}</span>
+      <span
+        className="mt-2 text-sm text-gray-400"
+        dangerouslySetInnerHTML={{ __html: helperText as string }}
+      />
     </div>
   )
 }

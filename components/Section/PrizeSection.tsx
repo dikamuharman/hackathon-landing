@@ -2,7 +2,7 @@ import React from 'react'
 import Container from '../Container'
 import Image from 'next/image'
 import SectionImage from '../../assets/section-image-2.png'
-import Champion from '../icons/Champion'
+import googleDev from '../../assets/google-dev.svg'
 import CheckImage from '../../assets/cheklist.png'
 import Button from '../Buttons'
 
@@ -21,10 +21,9 @@ const PrizeSection = () => {
       <div className="relative flex flex-col items-center justify-center lg:order-2 lg:w-1/2">
         <Image src={SectionImage} width={370} height={554} />
         <div className="absolute -bottom-8 flex w-[250px] items-center justify-center rounded-xl bg-white py-2 px-6 text-black shadow-md lg:right-8 ">
-          <Champion />
           <div className="ml-3 flex flex-col">
-            <span className="text-sm">Total Prizes</span>
-            <span className="text-xl font-semibold">IDR 10.000.000</span>
+            <span className="text-sm">Supported by</span>
+            <Image src={googleDev} />
           </div>
         </div>
       </div>

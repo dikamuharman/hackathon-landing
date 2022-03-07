@@ -43,7 +43,7 @@ const Home: NextPage = () => {
       <AboutSection />
       <TimelineSection />
       <PrizeSection />
-      <OfficialSection />
+
       <MediaSection />
       <div className="bg-primary ">
         <FaqSection />

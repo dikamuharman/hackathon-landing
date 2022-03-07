@@ -31,23 +31,28 @@ const index: NextPage = () => {
     formState: { errors },
   } = useForm<DefaultItemInput>()
   const onSubmit: SubmitHandler<DefaultItemInput> = async (data) => {
+    console.log(process.env.URL_API)
     if (data.password === data.retype_password) {
       try {
         const res = await axios.post(
-          `${process.env.URL_API}/auth/local/register`,
+          `${process.env.URL_API}/api/auth/local/register`,
           {
             email: data.email,
             password: data.password,
             phone: data.phone,
             username: data.username,
             name: data.name,
+            retype_password: data.retype_password,
           }
         )
+        console.log(res.data.token)
         nookies.set(null, 'token', res.data.jwt, {
           maxAge: 7 * 24 * 60 * 60,
         })
         Router.replace('/admin')
-      } catch (error) {}
+      } catch (error) {
+        console.error(error)
+      }
     }
   }
 
@@ -69,6 +74,7 @@ const index: NextPage = () => {
               onSubmit={handleSubmit(onSubmit)}
             >
               <InputText
+                required
                 register={register}
                 name="username"
                 label="Username"
@@ -76,6 +82,7 @@ const index: NextPage = () => {
                 placeholder="Eg : fikiAlamsyah"
               />
               <InputText
+                required
                 label="Name"
                 type="text"
                 placeholder="Eg: Fiki Alamsyah"
@@ -83,6 +90,7 @@ const index: NextPage = () => {
                 name="name"
               />
               <InputText
+                required
                 label="Phone Number"
                 type="tel"
                 addOn={'+62'}
@@ -91,6 +99,7 @@ const index: NextPage = () => {
                 register={register}
               />
               <InputText
+                required
                 label="E-mail"
                 type="email"
                 placeholder="Eg: email@mail.com"
@@ -98,6 +107,7 @@ const index: NextPage = () => {
                 name="email"
               />
               <InputText
+                required
                 label="Password"
                 type="password"
                 icon={<HiEye />}
@@ -105,6 +115,7 @@ const index: NextPage = () => {
                 name="password"
               />
               <InputText
+                required
                 label="Confirm Password"
                 type="password"
                 icon={<HiEye />}

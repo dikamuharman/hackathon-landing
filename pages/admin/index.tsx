@@ -55,32 +55,41 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 
 const AdminHome: NextPage = () => {
   return (
-    <Container as="main" className="lg:w-[1124px]">
+    <Container as="main">
       <div className="flex w-full justify-between">
         <Image src={LogoDsc} />
         <DropdownMenu />
       </div>
-      <ol className="relative mt-10 border-l border-gray-200 dark:border-gray-700">
-        {timeLines.map((timeLine, i) => (
-          <li className="mb-10 ml-4">
-            <div className="absolute -left-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700"></div>
-            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              {timeLine.date}
-            </time>
-            <h3 className="text-lg font-semibold text-gray-900">
-              {timeLine.name}
-            </h3>
-            <p className="mb-4 text-base font-normal text-gray-500 ">
-              Isi deskripsi singkat tentang kegiatan diatas
-            </p>
-            <Link href="/admin/registrasi-tim" passHref>
-              <a className="inline-flex items-center rounded-lg border border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100  ">
-                Daftar tim
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ol>
+      <div className="flex">
+        <div className="lg:w-1/4"></div>
+        {/* Timeline */}
+        <div className="flex flex-col lg:w-3/4">
+          <h1 className="before:contents-[''] flex before:mr-3 before:h-full before:w-[7px] before:rounded before:bg-secodary">
+            Checkpoint
+          </h1>
+          <ol className="relative mt-10 border-l border-secodary">
+            {timeLines.map((timeLine, i) => (
+              <li className="mb-10 ml-4" key={i}>
+                <div className="absolute -left-1.5 h-3 w-3 rounded-full border border-secodary bg-secodary"></div>
+                <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                  {timeLine.date}
+                </time>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {timeLine.name}
+                </h3>
+                <p className="mb-4 text-base font-normal text-gray-500 ">
+                  Isi deskripsi singkat tentang kegiatan diatas
+                </p>
+                <Link href="/admin/registrasi-tim" passHref>
+                  <a className="inline-flex items-center rounded-lg border border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100  ">
+                    Daftar tim
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
     </Container>
   )
 }
